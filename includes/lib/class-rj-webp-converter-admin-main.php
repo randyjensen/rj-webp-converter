@@ -25,8 +25,8 @@ function delete_post_attachments($post_id) {
 		$filename = end($guid_parts);
 
 		// Make sure we only delete images that are jpg || png
-		if (preg_match('/(.jpg|.png)/', $filename) === 1) {
-			$filename = preg_replace('/(.jpg|.png)/', '', $filename);
+		if (preg_match('/\.(jpe?g|png)$/i', $filename) === 1) {
+			$filename = preg_replace('/\.(jpe?g|png)$/i', '', $filename);
 			$month = $guid_parts[count($guid_parts)-2];
 			$year = $guid_parts[count($guid_parts)-3];
 
@@ -40,7 +40,7 @@ function delete_post_attachments($post_id) {
 			if ($intermediate_sizes) {
 				foreach ($intermediate_sizes as $size) {
 					$filename = $size['file'];
-					$filename = preg_replace('/(.jpg|.png)/', '', $filename);
+					$filename = preg_replace('/\.(jpe?g|png)$/i', '', $filename);
 
 					$file = $dir . '/' . $filename;
 					if (file_exists($file . '.webp')) unlink($file . '.webp');

@@ -4,7 +4,7 @@ Donate link: http://www.randyjensen.com/
 Tags: webp, responsive, images, rwd, media
 Requires at least: 3.9
 Tested up to: 3.9.1
-Stable tag: 1.0.0
+Stable tag: 1.0.1
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -35,22 +35,29 @@ You'll need to change the permissions of this file to 744. You can use an FTP pr
 
 If you want to see the debug output, turn WP_DEBUG on and go to the Media Library and upload a new PNG/JPG image. You should see the error where the image progress meter shows up.
 
+= This doesn’t work on my Windows server =
+The plugin uses the Linux WebP converter library so you can probably swap that out if you need to. I also can’t guarantee this is going to work on all Linux servers. I’ve only tested it on multiple different Ubuntu servers I run.
+
 = Does this make WebP versions of all my already uploaded images? =
 No. Not yet. It only does images uploaded after you've installed and activated the plugin.
 
-= Does this make my website server WebP images to Chrome/Opera? =
+= Does this make my website serve WebP images to the right browsers? =
 No. It only handles converting the images as you upload them.
 
 == Screenshots ==
 
 == Changelog ==
 
-= 1.0 =
+= 1.0.1 =
+* 2016-08-28
+* Changed regex looking for jpg/png images
+
+= 1.0.0 =
 * 2014-08-26
 * Initial release
 
 == Upgrade Notice ==
 
-= 1.0 =
+= 1.0.0 =
 * 2014-08-26
 * Initial release
