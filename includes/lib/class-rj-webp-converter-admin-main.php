@@ -87,7 +87,7 @@ add_filter('wp_generate_attachment_metadata', 'create_webp_images_on_upload', 99
 function create_webp($dir, $metadata) {
   $cwebp = plugin_dir_path( __FILE__ );
   $cwebp = str_replace('includes/lib/', '', $cwebp);
-  $cwebp = $cwebp . 'libs/libwebp-0.4.1-rc1-linux-x86-32/bin/cwebp';
+  $cwebp = $cwebp . 'libs/libwebp-1.0.0-rc1-linux-x86-64/bin/cwebp';
 
 	if (strpos($metadata['file'], '.png') !== false) {
 		$webp_dir = str_replace('.png', '.webp', $dir);
